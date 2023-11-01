@@ -1,11 +1,12 @@
 import type { AppProps } from "next/app";
-import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { ArtheraTestnet } from "@thirdweb-dev/chains";
 import "../styles/globals.css";
 import Head from "next/head";
 import ThirdwebGuideFooter from "../components/GitHubLink";
 
 // This is the chain your dApp will work on.
-const activeChain = "mumbai";
+const activeChain = ArtheraTestnet;
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
