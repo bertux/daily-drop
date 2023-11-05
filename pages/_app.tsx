@@ -1,5 +1,9 @@
 import type { AppProps } from "next/app";
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { ThirdwebProvider,
+  metamaskWallet,
+  coinbaseWallet,
+  walletConnect,
+  embeddedWallet, } from "@thirdweb-dev/react";
 import { ArtheraTestnet } from "@thirdweb-dev/chains";
 import "../styles/globals.css";
 import Head from "next/head";
@@ -9,8 +13,16 @@ import ThirdwebGuideFooter from "../components/GitHubLink";
 const activeChain = ArtheraTestnet;
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <ThirdwebProvider activeChain={activeChain}>
+    return (
+    <ThirdwebProvider
+      activeChain={activeChain}
+      clientId="baa74889096f6eb0ae7d57358f7a9ad9"
+        supportedWallets={[
+          metamaskWallet(),
+          coinbaseWallet(),
+          walletConnect(),
+          embeddedWallet({ recommended: true }),
+        ]}>
       <Head>
         <title>thirdweb Edition Drop Minting Customizable Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
