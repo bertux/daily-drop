@@ -35,6 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="Thirdweb, thirdweb Edition drop, how to make thirdweb nft drop, how to make nft collection thirdweb"
         />
       </Head>
+      <ConnectWallet />
       <Component {...pageProps} />
       <ThirdwebGuideFooter />
     </ThirdwebProvider>
